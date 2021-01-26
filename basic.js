@@ -200,3 +200,73 @@ function ckeck()
 }
 */
 
+//＊＊＊＊＊＊切記＊＊＊＊方法是可以重複使用的 不要硬寫
+/*
+function nextInLine(arr,item)
+{
+    arr.push(item);
+    var removed = arr.shift();//陣列會先刪掉第一個數字 然後把值設定給removed
+    return removed;   //,也可以直接return arr.shift()不設removed這個變數
+}
+
+var testArr = [5,6,7,8,9];
+console.log("Before:"+JSON.stringify(testArr));
+console.log(nextInLine(testArr,10));
+console.log("After: "+JSON.stringify(testArr));
+*/
+
+//js中的boolean 不需要引號 字串 "true" or "false" 不是布林值
+/*
+function showBoolean()
+{
+    //return true;
+    return false;
+}
+console.log(showBoolean());
+*/
+
+//js == 一般相等可以比較字串跟數字 會顯示true 但如果是嚴格相等 ＝＝＝會因為型別不同顯示false
+/*
+function testqual()
+{
+    if (1=='1')
+    {
+        return true;
+    }
+    return false;
+}
+
+console.log(testqual());
+*/
+
+
+//typeof 可以顯示變數的資料型別
+/*
+console.log(typeof 3);
+console.log(typeof "3");
+*/
+
+//嚴格不相等 與不等式（！＝）不相同，嚴格不相等把不同型別視為不同
+/*
+function testInequal(val)
+{
+    if(val!==17)
+    {
+        return "Not equal";
+    }
+        return "equal";
+    
+}
+console.log(testInequal("17"));//Not equal
+console.log(testInequal(17));//equal
+*/
+
+// >，< ， >= ， <= 會和＝一樣在比較時轉換數據類型
+//用>舉例
+/*
+console.log(3>3);
+console.log(4>3);
+console.log('5'>3);
+console.log(5>'3');
+*/
+
