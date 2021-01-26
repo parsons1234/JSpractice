@@ -270,3 +270,73 @@ console.log('5'>3);
 console.log(5>'3');
 */
 
+// &&用法 and
+/*
+var x=5,y=8;
+if(x >=5&& y>=8)
+{
+    console.log(true) ;
+}
+else
+  console.log(false);
+*/
+
+// ||用法 or
+/*
+var x=5,y=8;
+if(x<5||y>8)
+{
+    console.log(true);
+}
+else 
+    console.log(false);
+*/
+//多重條件式
+/*
+var mathScore = 50;
+if(mathScore>=90)
+{
+    console.log("Excellent");
+}
+else if(mathScore>=80)
+{
+    console.log("good");
+}
+else if(mathScore>=60)
+{
+    console.log("pass");
+}
+else
+    console.log("Fail");
+ */
+
+
+ //switch case的值使用===(嚴格相等式)判斷，另外記得打break，不然下一行會被執行
+ //當caseInSwitch(1)時，若switch判斷內的case 1 打成 case "1" 在呼叫方法時就會無法判斷(因為他的型別不一樣)
+/*
+ function caseInSwitch(val) {
+    var answer = "";
+    switch(val)
+    {
+      case 1:
+        console.log("alpha");
+        answer ="alpha";
+        break;
+       case 2:
+        console.log("beta");
+         answer ="beta";
+        break;
+       case 3:
+        console.log("gamma");
+         answer ="gamma";
+        break;
+       case 4:
+        console.log("delta");
+         answer ="delta";
+        break;
+    }
+    return answer;
+  }
+  
+  caseInSwitch(1);
+*/
