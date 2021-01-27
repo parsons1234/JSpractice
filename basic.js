@@ -340,3 +340,111 @@ else
   
   caseInSwitch(1);
 */
+
+
+//switch 有default版 default 應該在最後 
+/*
+function switchOfStuff(val) {
+    var answer = "";
+    // Only change code below this line
+    switch(val)
+    {
+    case "a":
+      answer="apple";
+      break;
+    case "b":
+      answer="bird";
+      break;
+    case "c":
+      answer="cat";
+      break;
+    case "d":
+      answer="stuff";
+      break;
+    default:
+      answer="stuff";
+      break;
+    
+    }
+  
+    
+    
+  
+  
+    // Only change code above this line
+    console.log(answer);
+    return answer;
+   
+  }
+  
+  switchOfStuff(1);//會輸出stuff 因為switch 採用嚴格相等 case中沒有與1相等的 所以是default 的answer
+*/
+
+//switch 如果沒有break會一直向下執行case直到遇見break 
+/*
+function sequentialSizes(val) {
+  var answer = "";
+  // Only change code below this line
+  switch(val)
+  {
+    case 1:
+    case 2:
+    case 3:
+      answer="Low";
+     break;
+    case 4:
+    case 5:
+    case 6:
+     answer="Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+     answer="High";
+      break;
+  }
+
+
+  // Only change code above this line
+  return answer;
+}
+
+sequentialSizes(1);
+*/
+
+
+
+
+
+
+/*  
+//比較運算子會產生true or false 有些人可能會這樣寫
+function isEqual(a,b) {
+  if (a === b) {
+    return true;
+  } else {
+    return false;
+  }
+}
+*/
+
+
+//但有更好的方式 直接return 比較結果
+/*
+function isEqual(a,b) {
+    return a === b;
+  }
+
+*/
+
+// > < 就是 return a<b 程式碼以a<b為例
+
+/*
+function isLess(a, b) {
+  
+ return a<b;
+ 
+}
+
+isLess(10, 15);
+*/
