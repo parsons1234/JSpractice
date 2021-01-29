@@ -380,7 +380,8 @@ function switchOfStuff(val) {
   switchOfStuff(1);//會輸出stuff 因為switch 採用嚴格相等 case中沒有與1相等的 所以是default 的answer
 */
 
-//switch 如果沒有break會一直向下執行case直到遇見break 
+//switch 如果沒有break會一直向下執行case直到遇見break
+
 /*
 function sequentialSizes(val) {
   var answer = "";
@@ -447,4 +448,78 @@ function isLess(a, b) {
 }
 
 isLess(10, 15);
+*/
+
+
+// 若條件式一樣可以寫在一起 減少程式碼
+/*
+var count = 0;
+
+function cc(card) {
+switch(card)
+{
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+  case 6:
+    count++;
+    break;
+  case 7:
+  case 8:
+  case 9:
+    count+=0;
+    break;
+  case 10:
+  case "J":
+  case "Q":
+  case "K":
+  case "A":
+    count--;
+    break;
+
+
+
+
+}
+
+ if(count>0)
+ {
+   console.log(count," Bet");
+  return count+" Bet";
+ }
+ else{
+    console.log(count," Hold");
+  return count+" Hold";
+ }
+ 
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+*/
+
+
+/*
+-------------------------------觀念補充------------------------------------
+return 是用在函式（function）裡面，另外在return以下的程式碼不會被執行
+
+例如：
+function testFunction()
+{
+  .......
+  ............
+  ........
+
+  return xxx;
+  console.log(xxx);//這就不會被執行
+}
+
+
+而，console.log不限用於函式或全域範圍
+
+console.log用來檢視（印出）我們想知道的環節
+
+function可以定義為回傳值或沒有回傳值，若要對function回傳的值做後續處理，那麼就必須return
+
+
 */
