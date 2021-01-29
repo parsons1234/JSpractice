@@ -521,5 +521,91 @@ console.log用來檢視（印出）我們想知道的環節
 
 function可以定義為回傳值或沒有回傳值，若要對function回傳的值做後續處理，那麼就必須return
 
+*/
+
+
+//建立物件
+/*
+
+var myDog = {
+"name":"Monkey",
+"legs":5,
+"tails":2,
+"friends":["bird","panda"]
+};
+
+*/
+
+//另外，可以用數字當屬性，也可以省略字串的引號，
+
+//如果物件有非字串的屬性，js會自動將他的類型轉為字串
+//範例如下：
+
+/*
+var anotherObject = {
+  make: "Ford",
+  5: "five",
+  "model": "focus"
+};
+console.log(anotherObject[5]);
+*/
+
+//有兩種方式訪問物件屬性
+
+//第一種方式 使用.訪問屬性
+/*
+var myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+var prop1val = myObj.prop1; // val1
+var prop2val = myObj.prop2; // val2
+console.log(prop1val);
+console.log(prop2val);
+
+*/
+
+//第二種方式 使用括號訪問屬性
+//如果要訪問的屬性中間有空格就需要用到這個方法,沒有空格也可以使用！
+//有空格的屬性名稱需要用單引號或雙引號
+/*
+var myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+console.log(myObj["Space Name"]); // Kirk
+console.log(myObj['More Space']); // Spock
+console.log(myObj["NoSpace"]); //USS Enterprise
+*/
+
+//透過變數訪問物件的屬性
+/*
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+var playerNumber=16;      
+console.log(playerNumber);
+var player = testObj[playerNumber];   
+console.log(player);
+
+*/
+
+
+//更新物件屬性
+
+/*
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+//myDog.name="Happy Coder"; 
+myDog["name"]="Happy Coder"; //兩種寫法都可以
+console.log(myDog["name"]);
 
 */
