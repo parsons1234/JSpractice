@@ -609,3 +609,18 @@ myDog["name"]="Happy Coder"; //兩種寫法都可以
 console.log(myDog["name"]);
 
 */
+
+
+//新增物件屬性
+
+/*
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark="woof";
+myDog["bark"]="woof";  //這兩種方法都可以新增物件的屬性
+*/
