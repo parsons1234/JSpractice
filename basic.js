@@ -766,6 +766,72 @@ var myStorage = {
   }
 };
 
-var gloveBoxContents =myStorage.car.inside["glove box"];
+var gloveBoxContents =myStorage.car.inside["glove box"];//有空格要記得用引號
 
 */
+
+
+
+
+
+//存取嵌套陣列
+/*
+
+var ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+ourPets[0].names[1]; // "Fluffy"
+ourPets[1].names[0]; // "Spot"
+*/
+
+
+var collection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+//console.log(collection[2468].artist);//Prince
+// Only change code below this line
+
+function updateRecords(object, id, prop, value) {
+  if(object[id].prop!=object[id].tracks&&object[id].prop!="")
+  {
+    object[id].prop=value;
+  }
+  else if(object[id].prop==object[id].tracks&&object[id].tracks=="")
+  {
+      object[id].track.push([]);
+  }
+  return object;
+}
+
+console.log(updateRecords(collection, 5439, 'artist', 'ABBA'));
