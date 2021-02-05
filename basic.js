@@ -526,6 +526,7 @@ function可以定義為回傳值或沒有回傳值，若要對function回傳的�
 
 //建立物件
 /*
+//如果是非字串屬性 js會自動將屬性轉為字串
 
 var myDog = {
 "name":"Monkey",
@@ -608,4 +609,50 @@ var myDog = {
 myDog["name"]="Happy Coder"; //兩種寫法都可以
 console.log(myDog["name"]);
 
+*/
+
+
+//紀錄收集
+/*
+var collection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+function updateRecords(object, id, prop, value) {
+  if (prop!=="tracks"&&value!=="")
+  {
+    object[id][prop]=value;
+  }
+  else if(prop==="tracks"&&object[id].hasOwnProperty("tracks")==false)
+  {
+    object[id][prop]=[value];//這樣加入值之後才會有陣列 push不行在沒陣列的地方使用
+  }
+  else if(prop==="tracks"&&value!=="")
+  {
+    object[id][prop].push(value);
+  }
+  else if(value=="")
+  {
+    delete object[id][prop];
+  }
+  return object;
+}
+
+updateRecords(collection, 5439, 'artist', 'ABBA');
 */
