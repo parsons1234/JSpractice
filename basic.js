@@ -551,9 +551,9 @@ var anotherObject = {
 console.log(anotherObject[5]);
 */
 
-//有兩種方式訪問物件屬性
+//有兩種方式存取物件屬性
 
-//第一種方式 使用.訪問屬性
+//第一種方式 使用.存取屬性
 /*
 var myObj = {
   prop1: "val1",
@@ -566,8 +566,8 @@ console.log(prop2val);
 
 */
 
-//第二種方式 使用括號訪問屬性
-//如果要訪問的屬性中間有空格就需要用到這個方法,沒有空格也可以使用！
+//第二種方式 使用括號存取屬性
+//如果要存取的屬性中間有空格就需要用到這個方法,沒有空格也可以使用！
 //有空格的屬性名稱需要用單引號或雙引號
 /*
 var myObj = {
@@ -580,7 +580,7 @@ console.log(myObj['More Space']); // Spock
 console.log(myObj["NoSpace"]); //USS Enterprise
 */
 
-//透過變數訪問物件的屬性
+//透過變數存取物件的屬性
 /*
 var testObj = {
   12: "Namath",
@@ -612,7 +612,200 @@ console.log(myDog["name"]);
 */
 
 
+
 //紀錄收集
+/*
+=======
+//新增物件屬性
+
+/*
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark="woof";
+myDog["bark"]="woof";  //這兩種方法都可以新增物件的屬性
+*/
+
+
+//刪除物件的屬性
+/*
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+//delete myDog.tails;
+delete myDog["tails"];//這兩種方法都可以刪除物件的屬性
+
+*/
+
+//使用物件進行查找
+/*
+function phoneticLookup(val) {
+  var result = "";
+ var test={
+  "alpha":"Adams",
+  "bravo":"Boston",
+  "charlie": "Chicago",
+  "delta": "Denver",
+  "echo":"Easy",
+  "foxtrot": "Frank"
+ }
+  
+  result=test[val];
+  return result;
+}
+
+console.log(phoneticLookup("charlie"));
+*/
+
+
+//使用hasOwnProperty()測試物件的屬性
+//最後的答案會需要透過變數存取屬性 例如要顯示hat 那就要用變數存取屬性的方式obj[checkProp]
+/*
+var myObj={
+  top:"hat",
+  bottom:"pant"
+};
+function checkObj(obj,checkProp)
+{
+  if(obj.hasOwnProperty(checkProp)==true)
+  {
+   console.log(obj[checkProp]);
+  }
+  else
+  console.log("Not Found");
+}
+
+checkObj(myObj,"top");
+*/
+
+
+
+
+//操作複雜物件
+
+//---------------------------------------觀念----------------------------------
+/*
+     JavaScript Object Notation 簡稱JSON是用於儲存資料的相關資料交換格式。
+
+      JSON物件基本上就是JavaScript物件
+
+     **記得** 除非是最後一個屬性否則必須在結尾加上逗號
+*/
+/*
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+ 
+    "gold": true
+  },//記得加上逗號
+  //這裡之後是我加的
+  {
+    "artist":"Parsons Chen",
+    "title":"Piano Girl",
+    "release_year":1997,
+    "formats":[
+      "DVD",
+      "5G",
+      "DL"
+    ]
+  }
+
+];
+
+*/
+
+
+
+
+
+//存取嵌套物件
+//物件的子屬性可以用點或括號來存取
+
+/*
+
+var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"
+
+*/
+
+
+/*
+
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+var gloveBoxContents =myStorage.car.inside["glove box"];//有空格要記得用引號
+
+*/
+
+
+
+
+
+//存取嵌套陣列
+/*
+
+var ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+ourPets[0].names[1]; // "Fluffy"
+ourPets[1].names[0]; // "Spot"
+*/
+
+
+
 /*
 var collection = {
   2548: {
@@ -641,7 +834,7 @@ function updateRecords(object, id, prop, value) {
   }
   else if(prop==="tracks"&&object[id].hasOwnProperty("tracks")==false)
   {
-    object[id][prop]=[value];//這樣加入值之後才會有陣列 push不行在沒陣列的地方使用
+    object[id][prop]=value;
   }
   else if(prop==="tracks"&&value!=="")
   {
@@ -654,5 +847,5 @@ function updateRecords(object, id, prop, value) {
   return object;
 }
 
-updateRecords(collection, 5439, 'artist', 'ABBA');
+console.log(updateRecords(collection, 5439, 'tracks', 'ABBA'));
 */
