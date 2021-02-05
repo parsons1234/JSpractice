@@ -828,13 +828,13 @@ var collection = {
 };
 
 function updateRecords(object, id, prop, value) {
-  if (prop!=="tracks"&&value!=="")
+  if (prop!=="tracks"&&value!=="") //會用"tracks"作比較是因為 用object[id][track]顯示的是tracks的值,但是我們要比較的是有沒有tracks這個屬性
   {
     object[id][prop]=value;
   }
   else if(prop==="tracks"&&object[id].hasOwnProperty("tracks")==false)
   {
-    object[id][prop]=value;
+    object[id][prop]=[value]; //value要加上[] 不然push 沒辦法作用
   }
   else if(prop==="tracks"&&value!=="")
   {
