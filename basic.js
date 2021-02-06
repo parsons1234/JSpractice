@@ -849,3 +849,352 @@ function updateRecords(object, id, prop, value) {
 
 console.log(updateRecords(collection, 5439, 'tracks', 'ABBA'));
 */
+
+//while迴圈
+/*
+var myArray = [];
+var i=5;
+while(i>=0)
+{
+    myArray.push(i);//將i push入陣列的尾端
+    i--;
+}
+console.log(myArray)
+*/
+
+//for迴圈
+/*
+
+var myArray = [];
+for(var i=1;i<=5;i++)
+{
+    myArray.push(i);
+}
+
+*/
+
+
+
+
+
+//for迴圈 印出奇數
+/*
+var myArray = [];
+for (var i=1;i<=9;i+=2)
+{
+    myArray.push(i);
+}
+
+console.log(myArray);
+*/
+
+
+
+
+//for迴圈 倒數
+/*
+var myArray = [];
+for(var i = 9;i>=1;i-=2)
+{
+    myArray.push(i);
+}
+console.log(myArray)
+
+*/
+
+//用for迴圈把所有陣列中的數字＋起來
+
+
+
+/*
+
+
+var myArr = [ 2, 3, 4, 5, 6];
+console.log(myArr.length);//輸出5
+
+var total=0;
+for(var i=0;i<myArr.length;i++)//記得陣列從0開始數 但是length是算陣列的長度
+{
+    total+=myArr[i];
+}
+console.log(total);
+*/
+
+
+
+
+
+//走訪所有陣列並把所有數字相乘
+
+/* 
+//複習一下
+
+var arr=[[1,2],[3,4],[5,6]];
+console.log(arr[1][1]); //輸出4
+
+*/
+/*
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for (var i=0;i<arr.length;i++)
+  {
+    for (var j=0;j<arr[i].length;j++)
+    {
+      product*=arr[i][j];
+      console.log(product);
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+*/
+
+
+
+
+
+//do while 至少執行一次
+/*
+var myArray = [];
+var i = 10;
+
+do{
+myArray.push(i);
+  i++;
+}while (i < 5) ;
+*/
+
+
+
+//遞迴 前n項的總和
+
+/*
+function sum(arr, n) {
+  
+  if(n<=0)
+  {
+    return 0; //如果小於0或=0 return 0
+  }
+  else
+  {
+      return sum(arr,n-1)+arr[n-1]; //否則函式的n-1 +arr[n-1](陣列的n-1)
+  }
+    
+
+  
+}
+
+*/
+
+
+
+
+/*
+// Setup
+var contacts = [
+  {
+      "firstName": "Akira",
+      "lastName": "Laine",
+      "number": "0543236543",
+      "likes": ["Pizza", "Coding", "Brownie Points"]
+  },
+  {
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "number": "0994372684",
+      "likes": ["Hogwarts", "Magic", "Hagrid"]
+  },
+  {
+      "firstName": "Sherlock",
+      "lastName": "Holmes",
+      "number": "0487345643",
+      "likes": ["Intriguing Cases", "Violin"]
+  },
+  {
+      "firstName": "Kristian",
+      "lastName": "Vos",
+      "number": "unknown",
+      "likes": ["JavaScript", "Gaming", "Foxes"]
+  }
+];
+function lookUpProfile(name, prop){
+  // Only change code below this line
+  for(var i=0;i<contacts.length;i++)
+  {
+      if(contacts[i].firstName===name)
+  {
+      if(contacts[i].hasOwnProperty(prop))
+      {
+          return contacts[i][prop];
+      }
+      else 
+          return "No such property";
+  }
+      
+  }
+  return "No such contact";
+    
+  // Only change code above this line
+  
+  }
+  console.log(lookUpProfile("Kristian", "lastName"));
+*/
+
+
+
+
+
+
+//隨機生成亂數小數
+/*
+  function randomFraction() {
+
+    // Only change code below this line
+  
+    return Math.random();
+  
+    // Only change code above this line
+  }
+console.log(randomFraction());
+*/
+
+//隨機生成亂數整數
+/*
+------------------------------觀念------------------------
+
+Math.random（）永遠不可能返回1
+
+
+*/
+
+/*
+
+function randomWholeNum() {
+
+  // Only change code below this line
+  return Math.floor(Math.random()*10);
+}
+
+console.log(randomWholeNum());
+*/
+
+
+
+//將字串轉為整數
+//舉例 var a = parseInt("007");
+//若字串不能轉為數字 則返回NaN
+/*
+function convertToInteger(str) {
+  var a =parseInt(str);
+  return a;
+}
+
+//console.log(convertToInteger("ㄅ "));像這樣就會回傳NaN
+//console.log(convertToInteger("123"));
+
+*/
+
+
+
+/*
+在parseInt()中使用 Radix
+radix 是 parseInt函式中的第二個參數
+parseInt(string, radix); //像這樣
+//舉例 var a = parseInt("11", 2);這段程式碼的意思是"11"是在2進制
+*/
+
+/*
+function convertToInteger(str) {
+  var a = parseInt(str,2);
+  return a;
+  }
+  
+  console.log(convertToInteger("10011"));
+*/
+
+
+
+
+//三元運算子
+
+/*
+function checkEqual(a, b) {
+  return a==b?"Equal":"Not Equal";
+}
+
+console.log(checkEqual(1, 2));
+*/
+
+
+//多個條件的三元運算子
+/*
+
+
+//以下程式碼用 if else if else 檢查多個條件
+function findGreaterOrEqual(a, b) {
+  if (a === b) {
+    return "a and b are equal";
+  }
+  else if (a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+
+*/
+
+
+//上面那個例子可以用三元運算子重新改寫
+/*
+
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+
+*/
+
+
+/*遞迴倒數
+function countdown(n){
+  if(n<1)
+  {
+    return [];
+  }
+  else
+  {
+    const countArray=countdown(n-1);
+     countArray.unshift(n);
+    return  countArray;
+  }
+
+}
+console.log(countdown(10));
+*/
+
+
+
+
+
+//使用遞迴創造一個數字範圍
+/*
+function rangeOfNumbers(startNum, endNum) {
+  if(endNum<startNum)
+  {
+    return [];
+  }
+  else{
+const countArray=rangeOfNumbers(startNum,endNum-1);
+    countArray.push(endNum);
+    return countArray;
+ 
+  }
+    
+};
+console.log(rangeOfNumbers(6,9));
+
+*/
